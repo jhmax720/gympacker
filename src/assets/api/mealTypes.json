@@ -1,16 +1,9 @@
 [
     {
-        "key": "1,"
+        "key": "1",
         "title": "Fitness Meal"
 
 
-    },
-    {}
+    }
+    
 ]
-
-//$key: string;
-//title: string;    
-//category: string; // fit, bulk    
-//mealSize: number; //ml
-//totalPrice: number;
-//quantity: number;

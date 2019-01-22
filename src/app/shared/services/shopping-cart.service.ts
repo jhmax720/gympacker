@@ -5,13 +5,13 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/map';
-import { MealTypeService } from 'shared/services/mealType.service';
-import { MealType } from 'shared/models/mealType';
+import { MealPlanService } from 'shared/services/mealPlan.service';
+import { MealPlan } from 'shared/models/mealPlan';
 
 @Injectable()
 export class ShoppingCartService {
 
-  constructor(private db: AngularFireDatabase, private mtService: MealTypeService) { }
+  constructor(private db: AngularFireDatabase, private mtService: MealPlanService) { }
 
   async addToCart(product: IProduct) {
     this.updateItemQty(product, 1);

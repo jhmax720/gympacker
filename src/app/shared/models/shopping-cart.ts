@@ -1,14 +1,14 @@
 import { IProduct } from './product';
 import { ShoppingCartItem } from './shopping-cart-items';
-import { MealType } from 'shared/models/mealType';
-import { MealTypeService } from 'shared/services/mealType.service';
+import { MealPlan } from 'shared/models/mealPlan';
+import { MealPlanService } from 'shared/services/mealPlan.service';
 
 export class ShoppingCart {
 
   items: ShoppingCartItem[] = [];
   
 
-  constructor(private itemsMap: { [key: string]: ShoppingCartItem}, private  mtService: MealTypeService) {
+  constructor(private itemsMap: { [key: string]: ShoppingCartItem}, private  mtService: MealPlanService) {
     for (let productId in itemsMap) {
       let item = itemsMap[productId];
       this.items.push(new ShoppingCartItem({
@@ -41,7 +41,7 @@ export class ShoppingCart {
     // });
     var price : number;
 
-    this.mtService.getSelectedMealType().subscribe(x=> price = x.totalPrice)
+    this.mtService.getSelectedMealPlan().subscribe(x=> price = x.selectedPricePerMeal*x.selectedQuantity)
     return price;
 
     //return count;

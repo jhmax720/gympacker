@@ -18,7 +18,7 @@ import { OrderService } from './services/order.service';
 import { ProductService } from './services/product.service';
 import { ShoppingCartService } from './services/shopping-cart.service';
 import { UserService } from './services/user.service';
-import { MealTypeService } from 'shared/services/mealType.service';
+import { MealPlanService } from 'shared/services/mealPlan.service';
 
 @NgModule({
   imports: [
@@ -44,7 +44,7 @@ import { MealTypeService } from 'shared/services/mealType.service';
     ProductService,
     ShoppingCartService,
     OrderService,
-    MealTypeService
+    MealPlanService
   ],
   exports : [
     CommonModule,
