@@ -6,9 +6,13 @@ import { MealPlanService } from 'shared/services/mealPlan.service';
 export class ShoppingCart {
 
   items: ShoppingCartItem[] = [];
-  
+  selectedQuantity: number;
+  selectedPricePerMeal: number;
+  selectedPlanCategory:string;
+  selectedPlan:string;
+  selectedMealSize:string;
 
-  constructor(private itemsMap: { [key: string]: ShoppingCartItem}, private  mtService: MealPlanService) {
+  constructor(private itemsMap: { [key: string]: ShoppingCartItem}) {
     for (let productId in itemsMap) {
       let item = itemsMap[productId];
       this.items.push(new ShoppingCartItem({
@@ -34,19 +38,19 @@ export class ShoppingCart {
     return count;
   }
 
-  get totalPrice() {
-    // let count = 0;
-    // this.items.forEach(item => {
-    //   count += item.totalPrice;
-    // });
-    var price : number;
+  // get totalPrice() {
+  //   // let count = 0;
+  //   // this.items.forEach(item => {
+  //   //   count += item.totalPrice;
+  //   // });
+  //   var price : number;
 
-    var selected = this.mtService.getSelectedMealPlan();
-    price = selected.selectedQuantity* selected.selectedQuantity ;
-    return price;
+  //   var selected = this.;
+  //   price = selected.selectedQuantity* selected.selectedQuantity ;
+  //   return price;
 
-    //return count;
-  }
+  //   //return count;
+  // }
 
 }
 

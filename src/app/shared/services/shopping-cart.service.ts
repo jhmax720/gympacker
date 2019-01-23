@@ -17,6 +17,33 @@ export class ShoppingCartService {
     this.updateItemQty(product, 1);
   }
 
+  async updateSelectedBasePrice(price:number)
+  {
+    
+    let cartId = await this.getOrCreateCartId();
+    let cart$ = this.db.object('/shopping-cart/' + cartId);
+    cart$.take(1).subscribe(x=>{
+      cart$.update({        
+        selectedPricePerMeal:price
+      })
+    });
+    
+  }
+
+  async updateSelectedMealNumber(quantity:number)
+  {
+    
+    let cartId = await this.getOrCreateCartId();
+    let cart$ = this.db.object('/shopping-cart/' + cartId);
+    cart$.take(1).subscribe(x=>{
+      cart$.update({
+        selectedQuantity:quantity
+        
+      })
+    });
+    
+  }
+
   async removeFromCart(product) {
     this.updateItemQty(product, -1);
   }
@@ -24,7 +51,12 @@ export class ShoppingCartService {
   async getCart(): Promise<Observable<ShoppingCart>> {
     let cartId = await this.getOrCreateCartId();
     return this.db.object('/shopping-cart/' + cartId)
-      .map(cart => new ShoppingCart(cart.items, this.mtService));
+      .map(cart => { 
+        var aCart = new ShoppingCart(cart.items);
+        aCart.selectedMealSize = cart.selectedMealSize;
+        aCart.selectedPricePerMeal = cart.selectedPricePerMeal;
+        return aCart}
+        );
     
     
   }
@@ -78,6 +110,14 @@ export class ShoppingCartService {
 
   private getItem(cartId, key) {
     return this.db.object('/shopping-cart/' + cartId + '/items/' + key);
+  }
+
+  async totalPrice()
+  {
+    var price: number;
+    let cart$ = await this.getCart();
+     cart$.subscribe(x=> price = x.selectedQuantity * x.selectedQuantity);
+    return price;
   }
 
 }

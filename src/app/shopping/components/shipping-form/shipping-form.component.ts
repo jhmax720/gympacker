@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'shared/services/auth.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { ShoppingCartService } from 'shared/services/shopping-cart.service';
 
 @Component({
   selector: 'shipping-form',
@@ -23,6 +24,7 @@ export class ShippingFormComponent implements OnInit, OnDestroy {
   constructor(
     private auth: AuthService,
     private router: Router,
+    private cartService: ShoppingCartService,
     private orderService: OrderService) { }
 
   async ngOnInit() {
@@ -39,7 +41,7 @@ export class ShippingFormComponent implements OnInit, OnDestroy {
 
   save(shipping) {
 
-    let order = new Order(this.userId, this.userName, shipping, this.carts);
+    let order = new Order(this.userId, this.userName, shipping, this.carts, this.cartService);
 
     this.orderService.placeOrder(order)
       .then(ref => {

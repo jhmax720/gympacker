@@ -1,4 +1,5 @@
 import { ShoppingCart } from './shopping-cart';
+import { ShoppingCartService } from 'shared/services/shopping-cart.service';
 export class Order {
 
   datePlaced: number;
@@ -13,7 +14,7 @@ export class Order {
 
 
   constructor(userId, userName,
-    public shipping: any, carts: ShoppingCart) {
+    public shipping: any, carts: ShoppingCart, private cartService: ShoppingCartService) {
 
     this.datePlaced = new Date().getTime();
 
@@ -36,7 +37,7 @@ export class Order {
       userId: userId,
       username: userName
     };
-    this.netPrice = carts.totalPrice;
+    cartService.totalPrice().then(x=>this.netPrice = x);
 
 
   }

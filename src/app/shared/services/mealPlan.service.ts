@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { MealPlan } from 'shared/models/mealPlan';
 import { Observable } from 'rxjs/Observable';
 import { MealSize } from 'shared/models/mealSize';
-import { SelectedMealPlan } from 'shared/models/selectedMealPlan';
+
 
 @Injectable()
 export class MealPlanService {
@@ -22,12 +22,6 @@ export class MealPlanService {
   getMealPlanById(orderId: string) {
     return this.db.object('/mealType/' + orderId);
   }
-
-   getSelectedMealPlan(): SelectedMealPlan {
-    let selectedMealPrice = localStorage.getItem('selectedMealPrice');
-    let selectedMealNumber = localStorage.getItem('selectedMealNumber');
-    
-    return new SelectedMealPlan();
-  }
+     
 
 }

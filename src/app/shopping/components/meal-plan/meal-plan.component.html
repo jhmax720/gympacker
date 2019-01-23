@@ -1,18 +1,22 @@
 <div>
-    <ng-container *ngFor="let plan of plans; let i = index">
+    <div *ngFor="let plan of plans; let i = index">
         <div class="col">
           <!-- <product-card [product]="product" [width]="20" [shopping-cart]="cart"></product-card> -->
           <a>{{plan.title}}</a>
           
           <ul>
-            <li *ngFor="let size of plan.mealSize">{{ size.mealSize}}ml - ${{size.pricePerMeal}}</li>
+            <li *ngFor="let size of plan.mealSize">
+                <a (click)="setMealPlanBasePrice(size.pricePerMeal)">{{ size.mealSize}}ml - ${{size.pricePerMeal}}</a>
+             </li>
           </ul>
 
           <ul>
-            <li *ngFor="let n of getMealNumberOptions() ">{{n}}</li>
+            <li *ngFor="let n of getMealNumberOptions() "><a href="javascript:void(0)" (click)="setMealWeeklyNumber(n)">{{n}}</a> </li>
           </ul>
 
         </div>
         <div class="w-100" *ngIf="(i+1)%2 === 0"></div>
-      </ng-container>
+      </div>
+
+      <button (click)="wtf()">wtf</button>
 </div>  

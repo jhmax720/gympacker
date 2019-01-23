@@ -1,3 +1,14 @@
+<div class="row" *ngIf="cart$ | async as cart">
+  <ul>
+    <li>selectedQuantity:{{cart.selectedQuantity}}</li>
+    <li>selectedPricePerMeal:{{cart.selectedPricePerMeal}}</li>
+    <li>selectedPlanCategory:{{cart.selectedPlanCategory}}</li>
+    <li>selectedPlan:{{cart.selectedPlan}}</li>
+    <li>selectedMealSize:{{cart.selectedMealSize}}</li>
+  </ul>
+    
+
+</div>
 <div class="row">
   <div class="col-md-3 col-sm-12">
     <product-filter [selectedCategory]="category"></product-filter>

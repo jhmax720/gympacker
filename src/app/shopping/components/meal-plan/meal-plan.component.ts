@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MealPlanService } from 'shared/services/mealPlan.service';
 import { MealPlan } from 'shared/models/mealPlan';
+import { ShoppingCartService } from 'shared/services/shopping-cart.service';
 
 @Component({
   selector: 'app-meal-plan',
@@ -12,12 +13,17 @@ export class MealPlanComponent implements OnInit {
   plans: MealPlan[] = [];
   
 
-  constructor(private mpService: MealPlanService ) { }
+  constructor(
+    private mpService: MealPlanService,
+    private cartService: ShoppingCartService
+     ) { }
 
   ngOnInit() {
     this.mpService.getAllMealPlans().subscribe(x=> {
         this.plans = x;
     });
+
+
   }
 
   getMealNumberOptions()
@@ -25,9 +31,15 @@ export class MealPlanComponent implements OnInit {
     return this.mpService.getMealChoiceNumber();
   }
 
-  setMealWeeklyNumber(choice)
+  setMealWeeklyNumber(quantity)
   {
-    
+    this.cartService.updateSelectedMealNumber(quantity);
+  }
+
+  setMealPlanBasePrice(price)
+  {
+    this.cartService.updateSelectedBasePrice(price);
+
   }
 
 }

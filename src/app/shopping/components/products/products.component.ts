@@ -18,7 +18,8 @@ export class ProductsComponent implements OnInit {
   products: IProduct[] = [];
   filteredProducts: IProduct[];
   category: string;
-  cart$: Observable<ShoppingCart>;
+  //cart:ShoppingCart;
+  cart$:Observable<ShoppingCart>;
 
   constructor(
     private cartService: ShoppingCartService,
@@ -28,6 +29,9 @@ export class ProductsComponent implements OnInit {
 
   async ngOnInit() {
     this.cart$ = await this.cartService.getCart();
+    // this.cart$.subscribe(c=>{
+    //   this.cart = c;
+    // })
     this.populateProducts();
   }
 
