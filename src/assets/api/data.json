@@ -1,0 +1,105 @@
+{
+    "categories": [
+        {
+            "title": "Beef",
+            "value": "beef"
+        },
+        {
+            "title": "Chicken",
+            "value": "chicken"
+        },
+        {
+            "title": "Lamb",
+            "value": "lamb"
+        },
+        {
+            "title": "Pork",
+            "value": "pork"
+        }
+    ],
+    "mealPlanCategories": [
+        {
+            "title": "fit",
+            "value":"fit"
+        },
+        {
+            "title": "bulk",
+            "value": "bulk"
+        },
+        {
+            "title": "super heavy",
+            "value": "heavy"
+        }
+    ],
+    "mealplans": [
+        {
+            "mealPlanCategory": "fit",
+            "mealSize": [
+                {
+                    "mealSize": 650,
+                    "pricePerMeal": 12
+                },
+                {
+                    "mealSize": 450,
+                    "pricePerMeal": 8
+                },
+                {
+                    "mealSize": 850,
+                    "pricePerMeal": 16
+                }
+            ],
+            "title": "LoseWeightMealPlan"
+        },
+        {
+            "mealPlanCategory": "bulk",
+            "mealSize": [
+                {
+                    "mealSize": 650,
+                    "pricePerMeal": 22
+                },
+                {
+                    "mealSize": 450,
+                    "pricePerMeal": 8
+                },
+                {
+                    "mealSize": 850,
+                    "pricePerMeal": 26
+                }
+            ],
+            "title": "GetBulkMealPlan"
+        }
+    ],
+    "products": [
+        {
+            "category": "beef",
+            "mealPlanCategory":"fit",
+            "imageUrl": "https://img1.cookinglight.timeinc.net/sites/default/files/styles/4_3_horizontal_-_1200x900/public/image/2015/04/main/1501p77-salmon-lime-hoisin-glaze-crunchy-bok-choy-slaw.jpg?itok=XciqhRnH",
+            "tag": "Beef",
+            "title": "product A"
+        },
+        {
+            "category": "chicken",
+            "mealPlanCategory":"fit",
+            "imageUrl": "https://media-cdn.tripadvisor.com/media/photo-s/0d/79/79/68/seed-roma-healthy-food.jpg",
+            "tag": "Chicken",
+            "title": "product B"
+        },
+        {
+            "category": "lamb",
+            "mealPlanCategory":"fit",
+            "imageUrl": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2015/1/15/1/FNM_030115-Caribbean-Chicken-Roti-Recipe_s4x3.jpg.rend.hgtvcom.826.620.suffix/1422376717597.jpeg",
+            "tag": "Beef",
+            "title": "product C"
+        },
+        {
+            "category": "pork",
+            "mealPlanCategory":"fit",
+            "imageUrl": "https://try-sunbasket-staging-assets.s3-us-west-2.amazonaws.com/2018/08/leanclean.jpg",
+            "tag": "Beef",
+            "title": "product D"
+        }
+
+    ]
+    
+    
+}

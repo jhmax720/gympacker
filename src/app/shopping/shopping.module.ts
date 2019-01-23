@@ -12,6 +12,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { ShippingFormComponent } from './components/shipping-form/shipping-form.component';
 import { ShopingCartComponent } from './components/shoping-cart/shoping-cart.component';
 import { ShoppingCartSummaryComponent } from './components/shopping-cart-summary/shopping-cart-summary.component';
+import { MealPlanComponent } from './components/meal-plan/meal-plan.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { ShoppingCartSummaryComponent } from './components/shopping-cart-summary
     RouterModule.forChild([
     { path: 'cart', component: ShopingCartComponent },
     { path: 'Products', component: ProductsComponent },
+    { path: 'plan', component: MealPlanComponent },
     { path: 'myorders', component: MyOrdersComponent, canActivate: [AuthGuardService] },
     { path: 'checkout', component: CheckOutComponent, canActivate: [AuthGuardService] },
     { path: 'order-success/:id', component: OrderSuccssComponent, canActivate: [AuthGuardService] },
@@ -34,7 +36,8 @@ import { ShoppingCartSummaryComponent } from './components/shopping-cart-summary
     ProductFilterComponent,
     ShoppingCartSummaryComponent,
     ShippingFormComponent,
-    OrderViewComponent
+    OrderViewComponent,
+    MealPlanComponent
   ]
 })
 export class ShoppingModule { }

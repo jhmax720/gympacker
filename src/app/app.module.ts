@@ -13,7 +13,7 @@ import { ProductsComponent } from './shopping/components/products/products.compo
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent    
   ],
   imports: [
     BrowserModule,

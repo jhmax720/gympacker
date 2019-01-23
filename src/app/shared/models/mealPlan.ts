@@ -2,10 +2,9 @@ import { MealSize } from "./mealSize";
 
 export class MealPlan {
     $key: string;
-    title: string;    
-    mealSizeKey:string; 
+    title: string; 
+    mealPlanCategory:string;       
     mealPlanOptions:Array<MealSize>;
-    selectedQuantity: number;
-    selectedPricePerMeal: number;
+    mealQuantity:Array<Number>;
   }
   

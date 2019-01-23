@@ -41,7 +41,8 @@ export class ShoppingCart {
     // });
     var price : number;
 
-    this.mtService.getSelectedMealPlan().subscribe(x=> price = x.selectedPricePerMeal*x.selectedQuantity)
+    var selected = this.mtService.getSelectedMealPlan();
+    price = selected.selectedQuantity* selected.selectedQuantity ;
     return price;
 
     //return count;

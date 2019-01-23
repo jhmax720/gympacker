@@ -1,9 +1,9 @@
 export interface IProduct {
   $key?: string;
   title: string;
-  //price: number;
-  category: string; // fit, bulk, regular
+  
+  category: string; // beef, chicken, pork
   imageUrl: string;
-  tag: string; //beef, chicken...
-  //size: number;
+  mealPlanCategory: string; //fit, bulk, heavy
+  
 }
