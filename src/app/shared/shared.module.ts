@@ -19,6 +19,7 @@ import { ProductService } from './services/product.service';
 import { ShoppingCartService } from './services/shopping-cart.service';
 import { UserService } from './services/user.service';
 import { MealPlanService } from 'shared/services/mealPlan.service';
+import { PaypalSubComponent } from './components/paypal-sub/paypal-sub.component';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { MealPlanService } from 'shared/services/mealPlan.service';
   declarations: [
     ProductCardComponent,
     ProductQuantityComponent,
-    ListOrderViewComponent
+    ListOrderViewComponent,
+    PaypalSubComponent
   ],
   providers: [
     AuthService,
