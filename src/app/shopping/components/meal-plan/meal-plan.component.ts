@@ -36,9 +36,9 @@ export class MealPlanComponent implements OnInit {
     this.cartService.updateSelectedMealNumber(quantity);
   }
 
-  setMealPlanBasePrice(price)
+  setMealPlanSelected(mealPlan, mealSize)
   {
-    this.cartService.updateSelectedBasePrice(price);
+    this.cartService.updateSelectedMealPlan(mealPlan, mealSize);
 
   }
 

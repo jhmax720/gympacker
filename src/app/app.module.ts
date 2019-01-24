@@ -9,11 +9,12 @@ import { SharedModule } from 'shared/shared.module';
 
 import { environment } from './../environments/environment';
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './shopping/components/products/products.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent    
+    AppComponent,
+    HomeComponent    
   ],
   imports: [
     BrowserModule,
@@ -23,7 +24,7 @@ import { ProductsComponent } from './shopping/components/products/products.compo
     AdminModule,
     ShoppingModule,
     RouterModule.forRoot([
-      { path: '', component: ProductsComponent }
+      { path: '', component: HomeComponent }
     ])
   ],
   providers: [],

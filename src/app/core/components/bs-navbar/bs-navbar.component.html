@@ -14,7 +14,7 @@
           <a class="nav-link" [routerLink]="['cart']">
                 <span class="navFixes hide-mobile">Cart</span>
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                <span class="badge badge-warning">{{(totalCart$| async)?.totalItemCount}}</span>
+                <span class="badge badge-warning">{{(totalCart$| async)?.totalItemCount}}/ {{(totalCart$| async)?.selectedQuantity}}</span>
             </a>
         </li>
       </ul>

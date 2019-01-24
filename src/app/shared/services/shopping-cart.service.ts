@@ -7,6 +7,8 @@ import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/map';
 import { MealPlanService } from 'shared/services/mealPlan.service';
 import { MealPlan } from 'shared/models/mealPlan';
+import { MealSize } from 'shared/models/mealSize';
+
 
 @Injectable()
 export class ShoppingCartService {
@@ -17,14 +19,17 @@ export class ShoppingCartService {
     this.updateItemQty(product, 1);
   }
 
-  async updateSelectedBasePrice(price:number)
+  async updateSelectedMealPlan(mealPlan:MealPlan, mealSize: MealSize)
   {
     
     let cartId = await this.getOrCreateCartId();
     let cart$ = this.db.object('/shopping-cart/' + cartId);
     cart$.take(1).subscribe(x=>{
-      cart$.update({        
-        selectedPricePerMeal:price
+      cart$.update({                        
+        selectedPricePerMeal: mealSize.pricePerMeal,
+        selectedPlanCategory:mealPlan.mealPlanCategory,
+        selectedPlan:mealPlan.title,
+        selectedMealSize:mealSize.mealSize
       })
     });
     
@@ -55,6 +60,9 @@ export class ShoppingCartService {
         var aCart = new ShoppingCart(cart.items);
         aCart.selectedMealSize = cart.selectedMealSize;
         aCart.selectedPricePerMeal = cart.selectedPricePerMeal;
+        aCart.selectedPlan = cart.selectedPlan;
+        aCart.selectedPlanCategory = cart.selectedPlanCategory;
+        aCart.selectedQuantity = cart.selectedQuantity;
         return aCart}
         );
     

@@ -14,7 +14,7 @@ export class Order {
 
 
   constructor(userId, userName,
-    public shipping: any, carts: ShoppingCart, private cartService: ShoppingCartService) {
+    public shipping: any, carts: ShoppingCart) {
 
     this.datePlaced = new Date().getTime();
 
@@ -24,8 +24,8 @@ export class Order {
           title: item.title,
           imageUrl: item.imageUrl,
           // price: item.price
-          size: item.size,
-          category: item.category
+          //size: item.size,
+          //category: item.category
         },
         qty: item.qty,
         //price: item.price,
@@ -37,7 +37,8 @@ export class Order {
       userId: userId,
       username: userName
     };
-    cartService.totalPrice().then(x=>this.netPrice = x);
+    this.netPrice = carts.totalPrice;
+    
 
 
   }

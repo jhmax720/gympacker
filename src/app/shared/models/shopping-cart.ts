@@ -38,19 +38,19 @@ export class ShoppingCart {
     return count;
   }
 
-  // get totalPrice() {
-  //   // let count = 0;
-  //   // this.items.forEach(item => {
-  //   //   count += item.totalPrice;
-  //   // });
-  //   var price : number;
+  get totalPrice() {
+    // let count = 0;
+    // this.items.forEach(item => {
+    //   count += item.totalPrice;
+    // });
+    var price : number;
 
-  //   var selected = this.;
-  //   price = selected.selectedQuantity* selected.selectedQuantity ;
-  //   return price;
+    
+    price = this.selectedPricePerMeal * this.selectedQuantity ;
+    return price;
 
-  //   //return count;
-  // }
+    //return count;
+  }
 
 }
 

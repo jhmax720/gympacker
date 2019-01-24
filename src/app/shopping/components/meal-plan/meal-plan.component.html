@@ -6,17 +6,19 @@
           
           <ul>
             <li *ngFor="let size of plan.mealSize">
-                <a (click)="setMealPlanBasePrice(size.pricePerMeal)">{{ size.mealSize}}ml - ${{size.pricePerMeal}}</a>
+                <a href="javascript:void(0)" (click)="setMealPlanSelected(plan, size)">{{ size.mealSize}}ml - (${{size.pricePerMeal}})</a>
              </li>
           </ul>
 
+          
+
           <ul>
-            <li *ngFor="let n of getMealNumberOptions() "><a href="javascript:void(0)" (click)="setMealWeeklyNumber(n)">{{n}}</a> </li>
+            <li *ngFor="let n of getMealNumberOptions() "><a href="javascript:void(0)" (click)="setMealWeeklyNumber(n)">{{n}} meals per week</a> </li>
           </ul>
 
         </div>
         <div class="w-100" *ngIf="(i+1)%2 === 0"></div>
       </div>
 
-      <button (click)="wtf()">wtf</button>
+      
 </div>  

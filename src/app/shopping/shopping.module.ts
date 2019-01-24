@@ -19,7 +19,7 @@ import { MealPlanComponent } from './components/meal-plan/meal-plan.component';
     SharedModule,
     RouterModule.forChild([
     { path: 'cart', component: ShopingCartComponent },
-    { path: 'Products', component: ProductsComponent },
+    { path: 'products', component: ProductsComponent },
     { path: 'plan', component: MealPlanComponent },
     { path: 'myorders', component: MyOrdersComponent, canActivate: [AuthGuardService] },
     { path: 'checkout', component: CheckOutComponent, canActivate: [AuthGuardService] },
@@ -37,6 +37,9 @@ import { MealPlanComponent } from './components/meal-plan/meal-plan.component';
     ShoppingCartSummaryComponent,
     ShippingFormComponent,
     OrderViewComponent,
+    MealPlanComponent
+  ],
+  exports: [
     MealPlanComponent
   ]
 })
