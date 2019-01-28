@@ -7,6 +7,7 @@ import { DataTableModule } from 'angular-4-data-table';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { CustomFormsModule } from 'ng2-validation';
+import { HttpClientModule  } from '@angular/common/http';
 
 import { ListOrderViewComponent } from './components/list-order-view/list-order-view.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
@@ -23,6 +24,7 @@ import { PaypalSubComponent } from './components/paypal-sub/paypal-sub.component
 
 @NgModule({
   imports: [
+    HttpClientModule,
     CommonModule,
     RouterModule,
     FormsModule,
@@ -58,7 +60,8 @@ import { PaypalSubComponent } from './components/paypal-sub/paypal-sub.component
     NgbModule.forRoot().ngModule,
     ProductCardComponent,
     ProductQuantityComponent,
-    ListOrderViewComponent
+    ListOrderViewComponent,
+    PaypalSubComponent
   ]
 })
 export class SharedModule { }
